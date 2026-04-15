@@ -1,44 +1,35 @@
-# CCATK-V1
+# CCATK
 
-使用socks4 / 5代理攻击http服务器的脚本。
+> ⚠️ 安全声明：本仓库新增的 GUI 工具仅用于**合法授权**的可达性巡检与代理连通性检测，不提供攻击能力。
 
-删除了混合代理洪水
+## 新增：Geek 风格 GUI 监控台
 
- 新特性:
--  快速套接字重用
--  改进的CC模式
--  随机客户端IP
+为改善原有单线命令行流程，新增 `gui_monitor.py`：
 
- 具体信息:
--  使用Python3
--  添加了更多智能选项
--  Http洪水
--  Http端口洪水
--  Http慢速攻击
--  支持HTTPS
--  Socks4代理下载器
--  Socks4代理检查器
--  Socks5代理下载器
--  Socks5代理检查器
--  随机Http发布数据
--  随机Http标头
--  随机Http Useragent
--  移除了混合代理洪水
--  添加了代理模式选择
--  仍在改进的项目
+- 黑色背景、终端日志窗口风格（geek theme）
+- 参数面板 + 控制按钮 + 实时日志 + 统计信息
+- 交互式流程：配置参数 → 启动巡检 → 实时观测 → 导出日志
+- 代理文件加载与批量可用性检测（结果输出 `available_proxies.txt`）
 
-## 安装
+### 运行方式
 
-    pip3 install requests pysocks
-    git clone https://github.com/BlueSkyXN/CCATK.git
-    cd CCATK
+```bash
+pip3 install requests
+python3 gui_monitor.py
+```
 
-## 使用
+### GUI 功能说明
 
-    python3 atk.py
+1. **目标 URL**：输入待巡检服务地址（`http://` 或 `https://`）。
+2. **HTTP 方法**：可选择 `GET` / `HEAD`。
+3. **巡检间隔**：每次请求之间的时间（秒）。
+4. **请求超时**：单次请求超时（秒）。
+5. **代理文件**：加载 `ip:port` 的 txt 文件后可执行代理可用性检测。
+6. **日志导出**：将窗口日志导出为 `.log/.txt` 文件。
 
+---
 
-#CCATK-V2
+## 旧脚本
 
 使用socks4 / 5代理攻击http（s）服务器的脚本。
 
